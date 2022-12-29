@@ -18,7 +18,7 @@ const AddTask = () => {
             details,
         }
         // console.log(taskInfo)
-        fetch('http://localhost:5000/taskAdd', {
+        fetch('https://task-management-server-zeta.vercel.app/taskAdd', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

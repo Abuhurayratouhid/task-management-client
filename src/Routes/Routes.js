@@ -39,7 +39,7 @@ const router= createBrowserRouter([
             },
             {
                 path: '/edit/:id',
-                loader: ({params})=> fetch(`http://localhost:5000/task/${params.id}`),
+                loader: ({params})=> fetch(`https://task-management-server-zeta.vercel.app/task/${params.id}`),
                 element: <TaskEdit></TaskEdit>,
             }
         ]

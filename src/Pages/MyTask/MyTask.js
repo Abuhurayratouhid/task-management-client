@@ -8,7 +8,7 @@ const MyTask = () => {
     const navigate = useNavigate()
     const { data: tasks = [], isLoading, refetch } = useQuery({
         queryKey: ['tasks'],
-        queryFn: () => fetch('http://localhost:5000/allTask')
+        queryFn: () => fetch('https://task-management-server-zeta.vercel.app/allTask')
             .then(res => res.json())
     })
 
@@ -17,7 +17,7 @@ const MyTask = () => {
     }
 
     const handleComplete = (_id) => {
-        fetch(`http://localhost:5000/taskComplete/${_id}`, {
+        fetch(`https://task-management-server-zeta.vercel.app/taskComplete/${_id}`, {
             method: 'PUT',
         })
             .then(res => res.json())
@@ -35,7 +35,7 @@ const MyTask = () => {
 
         // console.log('delete ID', _id)
         if (confirmed) {
-            fetch(`http://localhost:5000/taskDelete/${_id}`, {
+            fetch(`https://task-management-server-zeta.vercel.app/taskDelete/${_id}`, {
                 method: 'DELETE',
             })
                 .then(res => res.json())

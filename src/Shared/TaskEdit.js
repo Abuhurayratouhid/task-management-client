@@ -12,7 +12,7 @@ const TaskEdit = () => {
     const handleUpdatedTask = (e)=>{
         e.preventDefault()
         // console.log(e.target)
-        fetch(`http://localhost:5000/editTask/${_id}`,{
+        fetch(`https://task-management-server-zeta.vercel.app/editTask/${_id}`,{
             method: 'PUT',
             headers: {
                 'content-type' : 'application/json'
