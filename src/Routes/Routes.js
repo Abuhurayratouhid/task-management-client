@@ -6,6 +6,7 @@ import Home from "../Pages/Home/Home";
 import Login from "../Pages/Login/Login";
 import MyTask from "../Pages/MyTask/MyTask";
 import SignUp from "../Pages/SignUp/SignUp";
+import TaskEdit from "../Shared/TaskEdit";
 
 const router= createBrowserRouter([
     {
@@ -35,6 +36,11 @@ const router= createBrowserRouter([
             {
                 path: '/signUp',
                 element: <SignUp></SignUp>
+            },
+            {
+                path: '/edit/:id',
+                loader: ({params})=> fetch(`http://localhost:5000/task/${params.id}`),
+                element: <TaskEdit></TaskEdit>,
             }
         ]
     }
